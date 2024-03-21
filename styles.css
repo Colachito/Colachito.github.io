@@ -1,0 +1,88 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #b7ff96;
+}
+
+.garden {
+    width: 100vw; /* Ancho del viewport */
+    height: 100vh; /* Altura del viewport */
+    position: relative; /* Asegura que los elementos hijos se posicionen con respecto a este contenedor */
+}
+
+
+.sunflower {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    animation: fadeInOut 2s ease infinite;
+}
+
+.petal {
+    width: 20px;
+    height: 60px;
+    position: absolute;
+    background: linear-gradient(to bottom, #FFDB58, #FFAC1C);
+    border-radius: 10px;
+}
+
+.petal:nth-child(odd) {
+    transform: rotate(60deg);
+}
+
+.petal:nth-child(even) {
+    transform: rotate(30deg);
+}
+
+.center {
+    width: 20px;
+    height: 20px;
+    background-color: brown;
+    border-radius: 50%;
+    position: absolute;
+    top: 20px; /* Mitad de la altura del girasol */
+    left: 0px; /* Mitad de la anchura del girasol */
+}
+ /* carta */
+ .card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white; /* Color de fondo de la carta */
+    width: 300px; /* Ancho de la carta */
+    height: 300px; /* Altura de la carta */
+    border-radius: 10px; /* Radio de borde para redondear la carta */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra para efecto de elevación */
+    z-index: 9999; /* Coloca la carta por encima de todo */
+}
+  
+  .content {
+    text-align: center;
+    color: #000000;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-family: "Patua One", serif;
+    font-style: normal;
+    font-weight: 400;
+  }
+  
+/* Media query para dispositivos con un ancho máximo de 600px, como celulares */
+@media screen and (max-width: 600px), (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .card {
+      width: 90%; /* Ancho del contenedor */
+      max-width: none; /* Restaurar el ancho máximo */
+      border-radius: 10px; /* Reducir el radio de borde para dispositivos pequeños */
+    }
+  }
+    
+  
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
